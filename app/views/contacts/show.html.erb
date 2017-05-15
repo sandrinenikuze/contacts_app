@@ -1,0 +1,20 @@
+<h1>Contact</h1>
+
+<h2><%= @contact.first_name %> </h2>
+<h2><%= @contact.last_name %></h2>
+<h2>Email<%= @contact.email %></h2>
+<h2>Phone:<%= @contact.phone_number %></h2>
+<ul>
+  <% @contact.groups.each do |group| %>
+    <h2>Contact Group:
+    <li>
+      <%= group.name%>
+    </li>
+    </h2>
+  <%end%>
+</ul>
+
+
+
+<%= button_to "Edit", "/contacts/#{@contact.id}/edit", method: :get %>
+<%= link_to "Delete", "/contacts/#{@contact.id}", method: :delete %>
